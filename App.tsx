@@ -1,18 +1,17 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 
-import { CameraScreen, MapScreen } from './src/screens';
+import { Home } from './src/screens';
 
-const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
-export default function App() {
+export const App = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Camera" component={CameraScreen} />
-        <Tab.Screen name="Map" component={MapScreen} />
-      </Tab.Navigator>
+      <Drawer.Navigator>
+        <Drawer.Screen name="Home" component={Home} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
-}
+};

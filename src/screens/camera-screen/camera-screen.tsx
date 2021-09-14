@@ -1,14 +1,9 @@
-import { useIsFocused } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import { View } from 'react-native';
 
 import { Camera } from '../../components/camera';
 
+const Tab = createBottomTabNavigator();
 export const CameraScreen = () => {
-  const isFocused = useIsFocused();
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      {isFocused && <Camera />}
-    </View>
-  );
+  return <Camera />;
 };
